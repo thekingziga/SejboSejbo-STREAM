@@ -1,0 +1,24 @@
+services:
+  sejbosejbo-live:
+    build: .
+    container_name: sejbosejbo-live
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT:-3030}:3030"
+    environment:
+      - NODE_ENV=production
+      - PORT=3030
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD:-sejbosejbo}
+    volumes:
+      - ./data:/app/data
+      - ./uploads:/app/uploads
+
+  # Optional RTMP/HLS ingest relay (point OBS Studio to rtmp://localhost:1935/live/<stream_key>
+  # and set the channel HLS URL to http://localhost:8888/live/<stream_key>/index.m3u8)
+  rtmp-hls-relay:
+    image: bluenviron/mediamtx:latest
+    container_name: sejbosejbo-rtmp
+    restart: unless-stopped
+    ports:
+      - "1935:1935"
+      - "8888:8888"

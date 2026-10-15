@@ -1,0 +1,19 @@
+{
+  "name": "sejbosejbo-live",
+  "version": "1.0.0",
+  "description": "SEJBOSEJBO.TV — Self-hosted chaotic live streaming platform (Twitch + YouTube Live + Owncast in pure Neo-Brutalist Sejbosejbo style).",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "compression": "^1.8.1",
+    "express": "^4.21.2",
+    "multer": "^2.0.2",
+    "ws": "^8.18.1"
+  },
+  "engines": {
+    "node": ">=22.5"
+  }
+}
