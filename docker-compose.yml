@@ -1,5 +1,6 @@
 services:
   sejbosejbo-live:
+    image: thekingziga/sejbosejbo-stream:1.0.0
     build: .
     container_name: sejbosejbo-live
     restart: unless-stopped
