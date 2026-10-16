@@ -11,6 +11,11 @@ const config = {
   password: process.env.DOCKER_PASSWORD
 };
 
+if (!config.password) {
+  console.error("Set DOCKER_PASSWORD before running this script.");
+  process.exit(1);
+}
+
 const REPO = process.env.DOCKER_REPO || "thekingziga/sejbosejbo-stream";
 const ignoredDirs = new Set(["node_modules", "data", "uploads", ".git", "deploy"]);
 const ignoredFiles = new Set(["npm-debug.log"]);

@@ -1,6 +1,6 @@
 {
   "name": "sejbosejbo-live",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "SEJBOSEJBO.TV — Self-hosted chaotic live streaming platform (Twitch + YouTube Live + Owncast in pure Neo-Brutalist Sejbosejbo style).",
   "main": "server.js",
   "scripts": {

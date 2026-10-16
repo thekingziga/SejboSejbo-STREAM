@@ -12,7 +12,11 @@ const { attachLiveHub, broadcastToChannel, getLiveViewerCount, computeSejbometer
 
 const VERSION = require("./package.json").version;
 const PORT = Number(process.env.PORT || 3030);
+const SITE_URL = process.env.SITE_URL || `http://localhost:${PORT}`;
+const SITE_NAME = process.env.SITE_NAME || "";
+const RTMP_PUBLIC_URL = process.env.RTMP_PUBLIC_URL || "";
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "sejbosejbo";
+const SESSION_SECRET = process.env.SESSION_SECRET || crypto.randomBytes(32).toString("hex");
 
 const app = express();
 const server = http.createServer(app);
