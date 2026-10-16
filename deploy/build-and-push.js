@@ -6,7 +6,7 @@ const root = path.resolve(__dirname, "..");
 const VERSION = require("../package.json").version;
 
 const config = {
-  host: process.env.DOCKER_HOST_IP || "192.168.69.29",
+  host: process.env.DOCKER_HOST_IP || "127.0.0.1",
   username: process.env.DOCKER_USER || "ldocker",
   password: process.env.DOCKER_PASSWORD
 };
